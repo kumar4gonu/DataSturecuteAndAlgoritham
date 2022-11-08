@@ -28,15 +28,24 @@ public class BSF {
         while (queue.size() !=0){
             start = queue.poll();
             System.out.println(start);
-            Iterator it = adj[start].iterator();
+           // Iterator it = adj[start].iterator();
 
-            while (it.hasNext()){
-                int next = (int) it.next();
-                if(!visited[next]){
-                    visited[next] = true;
-                    queue.add(next);
+//            while (it.hasNext()){
+//                int next = (int) it.next();
+//                if(!visited[next]){
+//                    visited[next] = true;
+//                    queue.add(next);
+//                }
+//            }
+
+            for(Integer it : adj[start]){
+                if(!visited[it]){
+                    visited[it] = true;
+                    queue.add(it);
                 }
             }
+
+
         }
     }
 
